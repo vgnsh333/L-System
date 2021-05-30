@@ -1,18 +1,25 @@
-from LSysGen import next_gen
+from LSysGen import lsysgen
 import turtle
 skk = turtle.Turtle()
-rule = next_gen
+
 skk.speed(0)
 skk.penup()
-skk.setx(-100)
-skk.sety(100)
+skk.setx(0)
+skk.sety(0)
 skk.pendown()
-for i in rule:
+angle = 90
+
+axiom = "F+F+F+F"
+rule = 'FF+F++F+F'
+iterations=2
+
+drawStr = lsysgen(axiom,rule,iterations)
+for i in drawStr:
     if i == "F":
-        skk.forward(10)
+        skk.forward(15)
     if i == "+":
-        skk.right(90)
+        skk.left(angle)
     if i == "-":
-        skk.left(90)
+        skk.right(angle)
      
 turtle.done()
