@@ -16,3 +16,4 @@ for i in rule:
         skk.left(90)
      
 turtle.done()
+#
