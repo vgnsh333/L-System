@@ -9,17 +9,45 @@ skk.sety(0)
 skk.pendown()
 angle = 90
 
+# Hardcoded values for now
 axiom = "F+F+F+F"
 rule = 'FF+F++F+F'
-iterations=2
-
+iterations = 2
+line_length = 5
 drawStr = lsysgen(axiom,rule,iterations)
+stack = []
 for i in drawStr:
     if i == "F":
-        skk.forward(15)
-    if i == "+":
+        skk.forward(line_length)
+    elif i == "f":
+        skk.penup()
+        skk.forward(line_length)
+    elif i == "|":
+        pass
+    elif i == "[":
+        pass
+    elif i == "]":
+        pass
+    elif i == "#":
+        pass
+    elif i == "{":
+        pass
+    elif i == "}":
+        pass
+    elif i == "<":
+        pass
+    elif i == ">":
+        pass
+    elif i == "&":
+        pass
+    elif i == "(":
+        pass
+    elif i == ")":
+        pass
+    elif i == "+":
         skk.left(angle)
-    if i == "-":
+    elif i == "-":
         skk.right(angle)
-     
+    else:
+        print(i,': Not recognized')
 turtle.done()
