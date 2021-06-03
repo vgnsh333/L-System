@@ -1,0 +1,4 @@
+tk8.6-dev
+python-tk
+python3-tk
+tk-dev
