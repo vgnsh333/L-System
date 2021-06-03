@@ -1,6 +1,6 @@
 import turtle
 from LSysGen import lsysgen
-def create_turtle(screen_height,screen_width,speed,heading,x,y,size):
+def create_turtle(screen_height,screen_width,speed,heading,x,y,size,iterations,line_length,angle,axiom,rules):
     turtle.screensize(screen_width,screen_height)
     oogway = turtle.Turtle()
     oogway.speed(speed)
@@ -11,7 +11,7 @@ def create_turtle(screen_height,screen_width,speed,heading,x,y,size):
     oogway.pendown()
     oogway.resizemode('auto')
     oogway.turtlesize(size)
-    return oogway
+    draw(oogway,iterations,line_length,angle,axiom,rules)
 angle = 60
 axiom = "YF"
 rules = {
@@ -19,8 +19,6 @@ rules = {
 'Y -> XF-YF-X'
 }
 def draw(oogway,iterations,line_length,angle,axiom,rules):
-    iterations = 5
-    line_length = 15
     oogway.fillcolor('blue')
     drawStr = lsysgen(axiom,rules,iterations)
     stack = []
